@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-sm-4 text-center" style="margin-top: 15px;">
+        <div class="panel panel-info">
+            <div class="panel-heading preview">
+<!--               rajouter photo
+ -->                </div>
+                <div class="panel-body">
+                        <%= link_to root_path(), :remote => true, :class => "vote-up default button", class: 'stars' do %>
+                            <span>Notes : </span>
+                            <%= image_tag("stars.png", size: "32") %>
+                            <%= image_tag("stars.png", size: "32") %>
+                            <%= image_tag("stars.png", size: "32") %>
+                        <% end %>
+                    <hr>
+                    <a href="test">Reviews : (51)</a>
+
+                </div>
+                <div class="panel-footer">
+                    <%= link_to 'revenir a ma liste', meals_path, class: 'btn btn-primary btn-block' %>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-7 text-center" style="margin-top: 15px;">
+            <div class="panel panel-primary">
+                <div class="panel-heading preview panel-title">
+                        <%= @meal.name %>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Nbr de parts</th>
+                                    <th class="text-center">Cooked_at</th>
+                                    <th class="text-center">Category</th>
+                                    <th class="text-center">Country</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><%= @meal.category %></td>
+                                    <td class="text-center"><%= @meal.cooked_at %></td>
+                                    <td class="text-center"><%= @meal.price %></td>
+                                    <td class="text-center"><%= @meal.description %></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4">
+                                        <%= @meal.description %>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <div>
+                                <!--               rajouter photo
+ -->
+                        </div>
+                </div>
+            </div>
+        </div>
+</div>
+

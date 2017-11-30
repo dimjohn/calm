@@ -1,6 +1,6 @@
 class MealsController < ApplicationController
-  skip_before_action :authenticate_user! only: [:home]
-  before_action: set_meal, only [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:home]
+  before_action :set_meal, only: [:show, :edit, :update, :destroy]
 
 
 
@@ -10,6 +10,7 @@ class MealsController < ApplicationController
   end
 
   def index
+    @meals = Meal.all
   end
 
   def show
@@ -21,7 +22,7 @@ class MealsController < ApplicationController
 
 
   def create
-    @meal = current_user.meals.new(meal_params)
+    @meal = current_user.meals.new(meals_params)
     if @meal.save
       redirect_to meals_path(@meal), notice: "Repas ajouté avec succes"
     else
@@ -42,7 +43,7 @@ class MealsController < ApplicationController
   end
 
     def destroy
-      if @meal.update(meals_params)
+      if @meal.destroy
         redirect_to meals_path, notice: "Repas supprimé avec succes"
       else
         render :index
@@ -52,7 +53,7 @@ class MealsController < ApplicationController
     private
 
     def meals_params
-      params.require(:meal).permit(:name,:category, :cooked_at, :price, :description, :user_id)
+      params.require(:meal).permit(:name, :category, :cooked_at, :price, :description, :user_id)
     end
 
     def set_meal

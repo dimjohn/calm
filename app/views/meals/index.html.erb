@@ -1,0 +1,62 @@
+<div class="row">
+
+       <div class="col-md-3">
+
+             <ul class="sidebar-list">
+
+                    <li class="sidebar-item"><%= link_to "Mes Repas", meals_path, class: "sidebar-link active" %></li>
+                    <li class="sidebar-item"><%= link_to "Mes Reservations", meals_path, class: "sidebar-link active" %></li>
+                    <li class="sidebar-item"><%= link_to "Chiffre d'affaire", meals_path, class: "sidebar-link active" %></li>
+
+             </ul>
+
+        </div>
+
+        <div class="col-md-9">
+
+             <div class="panel panel-default">
+
+                  <div class="panel-heading">Mes Repas
+
+                  </div>
+
+
+                 <div class="panel-body">
+
+                       <% @meals.each do |meal| %>
+
+                          <div class="row">
+
+                                  <div class="col-md-2">
+
+                                    <!-- // ICI les photo de pres  -->
+
+                                  </div>
+
+                                  <div class="col-md-5 text-center">
+
+                                         <h4><%= meal.name %></h4>
+
+                                  </div>
+
+                                  <div class="col-md-5 right">
+
+                                      <%= link_to "Voir", meal_path(meal), class: "btn btn-success btn-sm" %>
+                                      <%= link_to "Mettre à jour", edit_meal_path(meal), class: "btn btn-primary btn-sm" %>
+                                      <%= link_to "Supprimez", meal_path(meal), class: "btn btn-danger btn-sm", method: :delete, data: {confirm: 'Sur ?'} %>
+
+                                  </div>
+
+                         </div>
+
+                         <hr>
+
+                    <% end %>
+
+                </div>
+
+            </div>
+
+      </div>
+
+  </div>
