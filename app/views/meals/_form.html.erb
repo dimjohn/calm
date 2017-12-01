@@ -4,23 +4,23 @@
             <h3><%= image_tag("tray", height: '64', width: '64') %> Votre plat</h3>
         </div>
         <div class="panel-body">
-        <%= form_for @meal do |f| %>
+        <%= simple_form_for @meal do |f| %>
                 <div class="form-group">
-                    <%= f.text_field :name, placeholder: "Titre du Repas", class: "form-control" %>
+                    <%= f.input :name, placeholder: "Titre du Repas", class: "form-control" %>
                 </div>
                 <div class="form-group">
-                    <%= f.text_area :description, rows:4, placeholder: "Description du Repas", class: "form-control" %>
+                    <%= f.input :description, rows:4, placeholder: "Description du Repas", class: "form-control" %>
                 </div>
                 <div class="form-group">
                         <span class="btn btn-default btn-file">
                                 <i class="fa fa-cloud-upload fa-lg"></i> Telecharger vos photos
-
+                                <%= f.input :photo, as: :attachinary %>
                             </span>
 
                     </div>
                 <div class="form-group">
                         <div class="input-group">
-                                <%= f.text_field :price, placeholder: "Prix par portion ex: 4€", class: "form-control" %>
+                                <%= f.input :price, placeholder: "Prix par portion ex: 4€", class: "form-control" %>
                                 <div class="input-group-addon">€</div>
                         </div>
 

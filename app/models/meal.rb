@@ -3,4 +3,5 @@ class Meal < ApplicationRecord
   has_many :reviews
   has_many :orders
   has_many :photos
+  has_attachements :photos, maximum: 3
 end
