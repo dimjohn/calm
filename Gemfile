@@ -19,7 +19,10 @@ gem 'uglifier'
 gem 'faker'
 gem 'omniauth-facebook'
 gem "paperclip", "~> 5.0.0"
-gem "cloudinary"
+gem 'cloudinary', '1.1.7'
+gem 'attachinary', github: 'assembler/attachinary'
+gem 'jquery-fileupload-rails'
+gem 'coffee-rails'
 
 
 group :development, :test do
@@ -31,6 +34,9 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker'
   gem 'omniauth-facebook'
-  gem "cloudinary"
+  gem 'cloudinary', '1.1.7'
+  gem 'attachinary', github: 'assembler/attachinary'
+  gem 'jquery-fileupload-rails'
+  gem 'coffee-rails'
 
 end
