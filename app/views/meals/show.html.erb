@@ -2,8 +2,8 @@
     <div class="col-sm-4 text-center" style="margin-top: 15px;">
         <div class="panel panel-info">
             <div class="panel-heading preview">
-<!--               rajouter photo
- -->                </div>
+               <%= cl_image_tag @meal.photos.first.path, width: 300, height: 200, crop: :fill  %>
+                </div>
                 <div class="panel-body">
                         <%= link_to root_path(), :remote => true, :class => "vote-up default button", class: 'stars' do %>
                             <span>Notes : </span>
