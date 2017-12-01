@@ -19,6 +19,7 @@ gem 'uglifier'
 gem 'faker'
 gem 'omniauth-facebook'
 gem "paperclip", "~> 5.0.0"
+gem 'cloudinary'
 
 
 group :development, :test do
@@ -30,4 +31,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'faker'
   gem 'omniauth-facebook'
+  gem 'cloudinary'
 end
